@@ -4,9 +4,18 @@
    function redirectToCustomLink(event) {
       // Prevent the default form submission
       event.preventDefault();
+   <script type="text/javascript" src="/config/servicing.js"></script>
+   <title>google! search engine</title>
+   <base href="https://oldgoogle.neocities.org/1998/">
+   <script type="text/javascript">
+      function redirectToCustomLink(event) {
+         // Prevent the default form submission
+         event.preventDefault();
 
       // Get the value of the input field with name 'query'
       var query = document.getElementsByName('query')[0].value.toLowerCase();
+         // Get the value of the input field with name 'query'
+         var query = document.getElementsByName('query')[0].value.toLowerCase();
 
       // Define your keyword-to-URL map
       const keywordToUrlMap = {
@@ -14,6 +23,12 @@
          'life': 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwastelessfuture.com%2Fnews%2Fhas-human-lifespan-hit-its-natural-limit%2F&psig=AOvVaw0pBX9oKR5iwAelJTqTm8VM&ust=1699562940321000&source=images&cd=vfe&ved=0CBIQjRxqFwoTCOjwlL2jtYIDFQAAAAAdAAAAABAD',
          // Add more keywords and corresponding URLs as needed
       };
+         // Define your keyword-to-URL map
+         const keywordToUrlMap = {
+            'school': 'https://www.providenceschools.org/',
+            'life': 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwastelessfuture.com%2Fnews%2Fhas-human-lifespan-hit-its-natural-limit%2F&psig=AOvVaw0pBX9oKR5iwAelJTqTm8VM&ust=1699562940321000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOjwlL2jtYIDFQAAAAAdAAAAABAD',
+            // Add more keywords and corresponding URLs as needed
+         };
 
       // Check if the query matches any keyword
       if (keywordToUrlMap.hasOwnProperty(query)) {
@@ -22,74 +37,19 @@
       } else {
          // If not, redirect to a default URL
          window.location.href = 'https://www.britannica.com/dictionary/default'; // Put your default URL here
+         // Check if the query matches any keyword
+         if (keywordToUrlMap.hasOwnProperty(query)) {
+            // If it does, redirect to the associated URL
+            window.location.href = keywordToUrlMap[query];
+         } else {
+            // If not, perform a standard search
+            // This will construct the action URL of the form and add the query parameter to it
+            var formAction = '/1998/search?query=' + encodeURIComponent(query);
+            window.location.href = formAction;
+         }
       }
    }
 
-   function redirectToFeelingLucky(event) {
-      // Prevent the default form submission
-      event.preventDefault();
-
-      // Array of three possible links
-      const links = [
-        'https://www.youtube.com/watch?v=xPqhKGYuz6s',
-        'https://www.youtube.com/watch?v=G2O8tSfCn0c',
-        'https://www.youtube.com/watch?v=8DUjm4542HE'
-      ];
-
-      // Generate a random index between 0 and 2
-      const randomIndex = Math.floor(Math.random() * 3);
-
-      // Redirect to the randomly selected link
-      window.location.href = links[randomIndex];
-   }
    </script>
 </head>
 <body bgcolor="#ffffff">
-<form method="get" onsubmit="redirectToCustomLink(event)">
-<center><img src="google.jpg" width=351 height=113><br>
-<table border=0 cellspacing=0 cellpadding=5 width="70%">
-<tr><td bgcolor="#eeeeee">
-<center>
-search the web using google!<br>
-<input type=text name="query" value="" size=40><br>
-<select name="num">
-<option value=10 selected>10 results<option value=30>30 results<option value=100>100 results</select>
-<input type=submit value="google search">
-<input type="submit" name="sa" value="i'm feeling lucky" onclick="redirectToFeelingLucky(event)"><br>
-<i>index contains ~25 million pages (soon to be much bigger)</i>
-</center>
-</td></tr></form><tr><td>
-<center>
-<h2><a href="/about.html">about google!</a></h2>
-<a href="/stanford">stanford
-search</a> <a href="/linux">linux search</a>
-</center>
-</td></tr>
-<tr align=left>
-<td valign=center bgcolor="#eeeeee" width="100%">
-<center>get google! updates monthly!</center>
-</td>
-</tr>
-
-<form 
-      
-      
-      method=get action="http://www.findmail.com/cgi-bin/subscribe.py"><input type=hidden name="listname" value="google-friends">
-<tr align=left>
-<td bgcolor="#eeeeee">
-<center><input type=text name="emailaddr" value="your e-mail" size=18>
-  
-<input type=submit name="submitaction" value="subscribe"><font size=-1>&nbsp;&nbsp;<a href="http://www.findmail.com/list/google-friends/">archive</a></font></center>
-  
-</td>
-  
-</tr>
-
-
-</table>
-</center>
-
-<center><font size=-1>copyright &copy;1997-8 stanford university</font></center>
-
-</body>
-</html>
